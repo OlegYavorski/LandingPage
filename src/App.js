@@ -4,6 +4,7 @@ import './App.css';
 import Backdrop from "./components/Backdrop/Backdrop";
 import Button from './components/Button/Button';
 import Modal from "./components/Modal/Modal";
+import Input from './components/Input/Input';
 
 class App extends Component {
   
@@ -22,6 +23,11 @@ class App extends Component {
     // this.client.callFunction('Greet', ['Max']);
   }
 
+  
+  inputChangeHandler = (event, input) => {
+    this.setState({ [input]: event.target.value });
+  };
+
   errorHandler = message => {
     this.setState({
       error: message
@@ -34,7 +40,7 @@ render() {
       <header className="App-header">
 
         <Backdrop show={!!this.state.error} />
-        <Button type="button">Okay</Button>
+        <Button type="button">Okay1</Button>
 
         <img src={logo} className="App-logo" alt="logo" />
         <a className="App-link" href = "E:\GitHub\LandingPage">E:\GitHub\LandingPage\</a>
@@ -50,6 +56,12 @@ render() {
         >
           <p>{this.state.error}</p>
         </Modal>
+
+        <Input
+            label="E-Mail"
+            config={{ type: 'email' }}
+            onChange={event => this.inputChangeHandler(event, 'email')}
+          />
 
     </div>
   );
