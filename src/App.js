@@ -11,8 +11,8 @@ class App extends Component {
     // isAuth: true,
     isAuth: false,
     authMode: "login",
-    //error : null 
-    error: 'Test for error'
+    error : null 
+    //error: 'Test for error'
   };
 
   constructor() {
