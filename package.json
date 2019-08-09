@@ -12,7 +12,7 @@
   
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && Rename  build  docs",
+    "build": "react-scripts build && IF EXIST docs rd docs /s /q && Rename  build  docs",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
