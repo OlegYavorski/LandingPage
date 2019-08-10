@@ -5,6 +5,9 @@ import Backdrop from "./components/Backdrop/Backdrop";
 import Button from './components/Button/Button';
 import Modal from "./components/Modal/Modal";
 import Input from './components/Input/Input';
+import ProductItem from './components/Products/ProductItem/ProductItem';
+import { Link } from 'react-router-dom';
+
 
 class App extends Component {
   
@@ -22,8 +25,11 @@ class App extends Component {
     console.log('constructor !!!')
     // this.client.callFunction('Greet', ['Max']);
   }
-
   
+  productDeleteHandler = productId => {
+    alert('productDeleteHandler')
+  };
+
   inputChangeHandler = (event, input) => {
     this.setState({ [input]: event.target.value });
   };
@@ -62,6 +68,20 @@ render() {
             config={{ type: 'email' }}
             onChange={event => this.inputChangeHandler(event, 'email')}
           />
+       
+       
+
+ <ProductItem
+              key="_id"
+              id="_id"
+              title="name"
+              text="description"
+              price="price"
+              imageUrl="image"
+              onDelete={this.productDeleteHandler}
+           
+      />
+     
 
     </div>
   );
