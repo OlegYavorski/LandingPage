@@ -9,6 +9,11 @@ import ProductItem from './components/Products/ProductItem/ProductItem';
 import { Link } from 'react-router-dom';
 import Header2 from './components2/Header2/Header2';
 import Main from './components2/Main/Main';
+import {
+  Stitch,
+  UserPasswordAuthProviderClient,
+  UserPasswordCredential
+} from "mongodb-stitch-browser-sdk";
 
 
 class App extends Component {
@@ -23,9 +28,9 @@ class App extends Component {
 
   constructor() {
     super();
-    // this.client = Stitch.initializeDefaultAppClient("processstudio-lwtbf");
+    this.client = Stitch.initializeDefaultAppClient("processstudio-lwtbf");
     console.log('constructor !!!')
-    // this.client.callFunction('Greet', ['Max']);
+    this.client.callFunction('Greet', ['Max']);
   }
   
   productDeleteHandler = productId => {
