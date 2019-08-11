@@ -7,6 +7,8 @@ import Modal from "./components/Modal/Modal";
 import Input from './components/Input/Input';
 import ProductItem from './components/Products/ProductItem/ProductItem';
 import { Link } from 'react-router-dom';
+import Header2 from './components2/Header2/Header2';
+import Main from './components2/Main/Main';
 
 
 class App extends Component {
@@ -43,6 +45,12 @@ class App extends Component {
 render() {  
   return (
     <div className="App">
+
+    <div>
+      <Header2 />
+      <Main />
+    </div>
+    
       <header className="App-header">
 
         <Backdrop show={!!this.state.error} />
