@@ -28,7 +28,7 @@ class ProductPage extends Component {
           })
           .catch(err => {
             this.setState({ isLoading: false });
-            console.log(err);
+            console.log("componentDidMount",err);
             this.props.onError('Loading the product failed. Please try again later');
           });
     // axios
